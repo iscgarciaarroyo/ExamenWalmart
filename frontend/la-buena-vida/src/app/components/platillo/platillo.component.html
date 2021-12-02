@@ -1,0 +1,16 @@
+<div class="loading" *ngIf="!platillos">
+    Cargando...
+</div>
+<div *ngIf="platillos" id="platillos" class="platillo-item card-group mt-5">
+    <div class="card" style="cursor: pointer;" *ngFor="let platillo of platillos; let i = index">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-center">{{platillo.nombre}}</h5>
+            <hr>
+            <p class="card-text"><strong>Ingredientes:</strong> {{platillo.ingredientes}}</p>
+            <p class="card-text"><strong>Peso:</strong> {{platillo.peso}} gr.</p>
+            <p class="card-text"><strong>Calorias:</strong> {{platillo.calorias}} cal.</p>
+            <p class="card-text"><strong>Precio:</strong> ${{platillo.precio}}</p>
+            <button class="btn btn-primary mt-auto" (click)="agregarPlatilloCarrito(platillo);">Seleccionar</button>
+        </div>
+    </div>
+</div>
